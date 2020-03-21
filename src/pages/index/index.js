@@ -1,13 +1,13 @@
 import React, { Component,Fragment } from 'react';
 import { Carousel } from 'antd-mobile';
-import axios from 'axios';
+import axios,{baseURL} from '../../utils/request';
 class index extends Component {
   state={
     carousel:[],
     imgHeight:176,
   };
   async componentDidMount(){
-   const res=await axios.get('http://157.122.54.189:9060/home/swiper')
+   const res=await axios.get('/home/swiper')
    console.log(res)
    this.setState({
      carousel:res.data.body
@@ -28,7 +28,7 @@ class index extends Component {
                 style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
               >
                 <img
-                  src={`http://157.122.54.189:9060`+val.imgSrc}
+                  src={baseURL+val.imgSrc}
                   alt=""
                   style={{ width: '100%', verticalAlign: 'top' }}
                   onLoad={() => {
