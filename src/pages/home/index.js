@@ -43,7 +43,7 @@ class Home extends React.Component {
             }}
             data-seed="logId"
           >
-            <Route component={Index}></Route>
+          <Route component={Index} path='/home' exact></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-findHouse"></i>}
