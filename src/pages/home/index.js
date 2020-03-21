@@ -9,7 +9,6 @@ import My from '../my';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     if(this.props.location.pathname==='/home'){
       this.props.history.push('/home/index')
     }
