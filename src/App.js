@@ -1,25 +1,17 @@
 import React from 'react';
-import {HashRouter as Router,Route,Link} from 'react-router-dom';
+import {HashRouter as Router,Route} from 'react-router-dom';
 
 import Home from './pages/home';
-import Found from './pages/found';
-import News from './pages/news';
-import My from './pages/my';
+import Mapfound from './pages/mapfound/mapfound.js';
+import Cityfound from './pages/cityfound/cityfound.js';
 function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-          <Link to='/'>home</Link>
-          <Link to='/found'>found</Link>
-          <Link to='/news'>news</Link>
-          <Link to='/my'>my</Link>
-        </nav>
         <section>
           <Route component={Home} path='/' exact></Route>
-          <Route component={Found} path='/found' exact></Route>
-          <Route component={News} path='/news' exact></Route>
-          <Route component={My} path='/my' exact></Route>
+          <Route component={Mapfound} path='/mapfound' exact></Route>
+          <Route component={Cityfound} path='/cityfound' exact></Route>
         </section>
       </Router>
     </div>
