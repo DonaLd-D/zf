@@ -1,12 +1,12 @@
 import { TabBar } from 'antd-mobile';
 import React from 'react';
 import {Route} from 'react-router-dom';
-import Index from '../index/index.js';
+import Index from '../index';
 import Found from '../found';
 import News from '../news';
 import My from '../my';
 
-class home extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +43,7 @@ class home extends React.Component {
             }}
             data-seed="logId"
           >
-            <Route ></Route>
+            <Route component={Index}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-findHouse"></i>}
@@ -58,6 +58,7 @@ class home extends React.Component {
             }}
             data-seed="logId1"
           >
+            <Route component={Found}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-infom"></i>}
@@ -71,6 +72,7 @@ class home extends React.Component {
               });
             }}
           >
+            <Route component={News}></Route>
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-my"></i>}
@@ -84,6 +86,7 @@ class home extends React.Component {
               });
             }}
           >
+            <Route component={My}></Route>
           </TabBar.Item>
         </TabBar>
       </div>
@@ -91,4 +94,4 @@ class home extends React.Component {
   }
 }
 
-export default home
+export default Home
