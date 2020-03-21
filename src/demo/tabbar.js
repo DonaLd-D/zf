@@ -5,7 +5,7 @@ class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab'
+      selectedTab: 'blueTab'
     };
   }
 
@@ -13,6 +13,7 @@ class TabBarExample extends React.Component {
     return (
       <div >
         {pageText}
+        <i className="iconfont icon-head-bot"></i>
       </div>
     );
   }
