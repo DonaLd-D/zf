@@ -8,7 +8,6 @@ class index extends Component {
   };
   async componentDidMount(){
    const res=await axios.get('/home/swiper')
-   console.log(res)
    this.setState({
      carousel:res.data.body
    })
