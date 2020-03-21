@@ -5,6 +5,7 @@ import nav1 from '../../assets/images/nav-1.png';
 import nav2 from '../../assets/images/nav-2.png';
 import nav3 from '../../assets/images/nav-3.png';
 import nav4 from '../../assets/images/nav-4.png';
+import indexCss from './index.module.scss';
 class index extends Component {
   state={
     carousel:[],
@@ -24,7 +25,7 @@ class index extends Component {
   }
   render() {
     return (
-      <div >
+      <div className={indexCss.HK_index}>
         <div className='index_carousel'>
           <Carousel
             autoplay
