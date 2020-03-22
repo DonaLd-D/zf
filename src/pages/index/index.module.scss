@@ -1,20 +1,110 @@
 .HK_index{
-  div.index_carousel {
+  // nav的样式
+  .index_navs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    .navs_item {
+      width: 50%;
+      img {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 10%;
+      }
+      p {
+        text-align: center;
+        margin: 10% 0;
+      }
+    }
+  }
+  // group的样式
+  .index_group{
+    background: #eee;
+    padding: 5px;
+    .index_group_title{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      span {
+        font-size: 16px;
+        color: #000;
+        font-weight: bold;
+      }
       a {
-        img {
-
+        color: #999;
+      }
+    }
+  
+    .index_group_content{
+      display: flex;
+      flex-wrap: wrap;
+      .group_item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background:#fff;
+        width: 50%;
+        border: 5px solid #eee;
+        padding: 20px 5px;
+        .goup_content_left{
+          width: 100%;
+          div:nth-child(1) {
+            font-size: 14px;
+            line-height: 18px;
+            color: #000;
+          }
+          div:nth-child(2) {
+            font-size: 13px;
+            line-height: 18px;
+            color: #999;
+          }
+        }
+  
+        .goup_content_right{
+          img {
+            width: 80%;
+          }
         }
       }
+    }
   }
-
-  div.index_navs {
-    div.navs_item {
-      img {
-
-      }
-
-      p {
-
+  // news的样式
+  .index_news{
+    padding: 20px;
+    background: #fff;
+    h3 {
+      padding-bottom: 10px;
+    }
+  
+    .index_news_content{
+      .news_item{
+        display: flex;
+        padding: 10px 0;
+        margin-right: 10px;
+        border-bottom: 1px solid #ddd;
+        .item_image{
+          img {
+            width: 130px;
+          }
+        }
+  
+        .item_right{
+          padding-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          p {
+            font-weight: 600;
+          }
+  
+          div {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 12px;
+          }
+        }
       }
     }
   }
