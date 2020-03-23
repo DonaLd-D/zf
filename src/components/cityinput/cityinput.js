@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import indexCss from './cityinput.module.scss'
 import {connect} from 'react-redux';
-import {getLocalCityAction} from '../../store/actionCreator';
 class cityinput extends Component {
-
-  componentDidMount(){
-    this.props.initcity()
-  }
 
   render() {
     return (
@@ -35,15 +30,7 @@ const mapStateToProps=(state)=>{
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    initcity(){
-      dispatch(getLocalCityAction())
-    }
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(cityinput);
+export default connect(mapStateToProps,null)(cityinput);
 
 // 另一种写法
 // const conFunc=connect(mapStateToProps)
