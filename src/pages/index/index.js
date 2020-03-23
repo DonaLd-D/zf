@@ -23,6 +23,11 @@ class index extends Component {
    this.getCarousel();
    this.getGroup();
    this.getNews();
+
+   var myCity = new window.BMap.LocalCity();
+    myCity.get((result)=>{
+    console.log(result)
+  });
   }
 
   getCarousel=async ()=>{
@@ -35,7 +40,6 @@ class index extends Component {
   }
   getNews=async ()=>{
     const res=await axios.get('/home/news?area=AREA%7C88cff55c-aaa4-e2e0')
-    console.log(res)
     this.setState({news:res.data.body})
   }
   render() {
