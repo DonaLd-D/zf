@@ -7,6 +7,7 @@ import nav3 from '../../assets/images/nav-3.png';
 import nav4 from '../../assets/images/nav-4.png';
 import {getlocation} from '../../utils/bdmaphelper'
 import indexCss from './index.module.scss';
+import Cityinput from '../../components/cityinput/cityinput';
 class index extends Component {
   state={
     carousel:[],
@@ -43,7 +44,9 @@ class index extends Component {
   render() {
     return (
       <div className={indexCss.HK_index}>
-        <div className='index_carousel'>
+        
+        <div className={indexCss.index_carousel}>
+          <div className={indexCss.city_input}><Cityinput></Cityinput></div>
           <Carousel
             autoplay
             infinite
