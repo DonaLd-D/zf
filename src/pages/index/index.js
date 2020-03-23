@@ -5,6 +5,7 @@ import nav1 from '../../assets/images/nav-1.png';
 import nav2 from '../../assets/images/nav-2.png';
 import nav3 from '../../assets/images/nav-3.png';
 import nav4 from '../../assets/images/nav-4.png';
+import {getlocation} from '../../utils/bdmaphelper'
 import indexCss from './index.module.scss';
 class index extends Component {
   state={
@@ -23,11 +24,8 @@ class index extends Component {
    this.getCarousel();
    this.getGroup();
    this.getNews();
-
-   var myCity = new window.BMap.LocalCity();
-    myCity.get((result)=>{
-    console.log(result)
-  });
+   let res=await getlocation();
+   console.log(res)
   }
 
   getCarousel=async ()=>{
