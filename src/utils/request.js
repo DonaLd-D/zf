@@ -4,10 +4,11 @@ import {Toast} from 'antd-mobile';
 export const baseURL='http://157.122.54.189:9060';
 axios.defaults.baseURL = baseURL;
 
-
+let ajaxTime=0;
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
+  ajaxTime++;
   Toast.loading('Loading...', 0);
   return config;
 }, function (error) {
@@ -18,7 +19,10 @@ axios.interceptors.request.use(function (config) {
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
   // 对响应数据做点什么
-  Toast.hide();
+  ajaxTime--;
+  if(ajaxTime===0){
+    Toast.hide();
+  }
   return response;
 }, function (error) {
   // 对响应错误做点什么
