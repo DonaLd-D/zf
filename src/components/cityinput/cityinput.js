@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import indexCss from './cityinput.module.scss'
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 class cityinput extends Component {
-
   render() {
+    const {history,cityName}=this.props;
     return (
       <div className={indexCss.city_input}>
         <div className={indexCss.input_content}>
-          <div className={indexCss.input_wrap}>
-          <span>{this.props.cityName}</span>
+          <div className={indexCss.input_wrap} onClick={()=>history.push('/cityfound')}>
+            <span>{cityName}</span>
             <i className={['iconfont','icon-arrow'].join(' ')}></i>
           </div>
           <div className={indexCss.input_address}>
@@ -16,7 +17,7 @@ class cityinput extends Component {
             <span>请输入小区或地址</span>
           </div>
         </div>
-        <div className={indexCss.input_map}>
+        <div className={indexCss.input_map} onClick={()=>history.push('/mapfound')}>
           <i className={['iconfont', 'icon-map'].join(' ')}></i>
         </div>
       </div>
@@ -30,7 +31,7 @@ const mapStateToProps=(state)=>{
   }
 }
 
-export default connect(mapStateToProps,null)(cityinput);
+export default connect(mapStateToProps,null)(withRouter(cityinput));
 
 // 另一种写法
 // const conFunc=connect(mapStateToProps)

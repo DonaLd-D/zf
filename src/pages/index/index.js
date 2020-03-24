@@ -46,7 +46,7 @@ class index extends Component {
       <div className={indexCss.HK_index}>
         
         <div className={indexCss.index_carousel}>
-          <div className={indexCss.city_input}><Cityinput></Cityinput></div>
+          <div className={indexCss.city_input}><Cityinput ></Cityinput></div>
           <Carousel
             autoplay
             infinite
